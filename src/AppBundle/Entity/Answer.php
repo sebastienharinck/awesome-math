@@ -12,6 +12,13 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Answer
 {
+
+    /**
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Question")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $question;
+
     /**
      * @var int
      *
@@ -93,5 +100,28 @@ class Answer
     {
         return $this->correct;
     }
-}
 
+    /**
+     * Set question
+     *
+     * @param \AppBundle\Entity\Question $question
+     *
+     * @return Answer
+     */
+    public function setQuestion(\AppBundle\Entity\Question $question)
+    {
+        $this->question = $question;
+
+        return $this;
+    }
+
+    /**
+     * Get question
+     *
+     * @return \AppBundle\Entity\Question
+     */
+    public function getQuestion()
+    {
+        return $this->question;
+    }
+}

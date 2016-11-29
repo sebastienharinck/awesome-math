@@ -12,6 +12,14 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Question
 {
+
+    /**
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Lesson")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $lesson;
+
+
     /**
      * @var int
      *
@@ -62,5 +70,28 @@ class Question
     {
         return $this->title;
     }
-}
 
+    /**
+     * Set lesson
+     *
+     * @param \OC\AppBundle\Entity\Lesson $lesson
+     *
+     * @return Question
+     */
+    public function setLesson(\OC\AppBundle\Entity\Lesson $lesson)
+    {
+        $this->lesson = $lesson;
+
+        return $this;
+    }
+
+    /**
+     * Get lesson
+     *
+     * @return \OC\AppBundle\Entity\Lesson
+     */
+    public function getLesson()
+    {
+        return $this->lesson;
+    }
+}
