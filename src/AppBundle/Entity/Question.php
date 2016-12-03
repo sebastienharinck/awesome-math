@@ -74,11 +74,11 @@ class Question
     /**
      * Set lesson
      *
-     * @param \OC\AppBundle\Entity\Lesson $lesson
+     * @param \AppBundle\Entity\Lesson $lesson
      *
      * @return Question
      */
-    public function setLesson(\OC\AppBundle\Entity\Lesson $lesson)
+    public function setLesson(\AppBundle\Entity\Lesson $lesson)
     {
         $this->lesson = $lesson;
 
@@ -88,7 +88,7 @@ class Question
     /**
      * Get lesson
      *
-     * @return \OC\AppBundle\Entity\Lesson
+     * @return \AppBundle\Entity\Lesson
      */
     public function getLesson()
     {
